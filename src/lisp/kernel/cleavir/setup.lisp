@@ -303,7 +303,6 @@
     hir))
 
 (defun my-hir-transformations (initial-instruction implementation processor os)
-  (cleavir-hir-transformations:type-inference initial-instruction)
   (cleavir-hir-transformations:eliminate-typeq initial-instruction)
   (cleavir-hir-transformations:eliminate-superfluous-temporaries initial-instruction)
   (cleavir-hir-transformations:process-captured-variables initial-instruction))

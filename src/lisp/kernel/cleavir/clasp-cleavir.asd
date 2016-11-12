@@ -10,6 +10,7 @@
 		 :cleavir-ast-to-hir
 		 :cleavir-ast-transformations
                  :cleavir-type-inference
+                 :cleavir-typed-transforms
 		 :cleavir-hir-transformations
                  :cleavir-remove-useless-instructions
 		 :cleavir-hir-to-mir
