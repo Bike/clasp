@@ -160,12 +160,23 @@
 (defmethod cleavir-env:variable-info ((environment core:value-environment) symbol)
   (cleavir-env:variable-info (core:get-parent-environment environment) symbol))
 
+(defvar *global-optimize*
+  ;; initial value, changed by de/proclaim
+  '((compilation-speed 1)
+    (debug 1)
+    (space 1)
+    (speed 1)
+    (safety 1)))
+
+(defvar *global-policy*
+  (cleavir-policy:compute-policy *global-optimize* *clasp-env*))
+
 (defmethod cleavir-env:optimize-info ((environment clasp-global-environment))
-  ;; The default values are all 3.
-  (make-instance 'cleavir-env:optimize-info))
+  (make-instance 'cleavir-env:optimize-info
+    :optimize *global-optimize*
+    :policy *global-policy*))
 
 (defmethod cleavir-env:optimize-info ((environment NULL))
-  ;; The default values are all 3.
   (cleavir-env:optimize-info *clasp-env*))
 
 

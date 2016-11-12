@@ -7,6 +7,7 @@
     :licence "LGPL-3.0"
     :depends-on (:cleavir-generate-ast
 		 :cleavir-ir
+                 :cleavir-compilation-policy
 		 :cleavir-ast-to-hir
 		 :cleavir-ast-transformations
                  :cleavir-type-inference
@@ -22,6 +23,7 @@
                  (:file "cmpltv")
                  (:file "cleavir-fixups-and-hacks")
 		 (:file "system")
+                 (:file "policy")
 		 (:file "ast")
 		 (:file "convert-form")
 		 (:file "convert-special")
